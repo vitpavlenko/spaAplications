@@ -1,0 +1,14 @@
+node_modules
+package-lock.json
+.idea
+node_modules/
+.env
+.nyc_output
+coverage
+docs
+npm-debug.log
+yarn-error.log
+log/*
+!log/.keep
+typings
+*.bat

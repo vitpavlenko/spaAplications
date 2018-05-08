@@ -1,0 +1,57 @@
+{
+  "name": "boldak-paty",
+  "version": "0.0.1",
+  "description": "Chmoki boldaka Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "migrate:make": "./node_modules/.bin/sequelize model:generate",
+    "migrate:latest": "./node_modules/.bin/sequelize db:migrate",
+    "migrate:rollback": "./node_modules/.bin/sequelize db:migrate:undo",
+    "seed:run": "./node_modules/.bin/sequelize db:seed:all",
+    "seed:rollback": "./node_modules/.bin/sequelize db:seed:undo",
+    "seed:make": "./node_modules/.bin/sequelize seed:generate",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "api",
+    "spa",
+    "boldak"
+  ],
+  "author": "IP-62",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "boom": "^7.2.0",
+    "dotenv": "^5.0.1",
+    "good": "^8.1.1",
+    "good-winston": "^4.0.0",
+    "hapi": "^17.3.1",
+    "hapi-async-handler": "^1.0.3",
+    "hapi-auth-jwt2": "^8.1.0",
+    "hapi-boom-decorators": "^4.0.0",
+    "hapi-response-time": "^2.0.0",
+    "hapi-swagger": "^9.1.1",
+    "hapi-trails": "^1.0.0",
+    "inert": "^5.1.0",
+    "joi": "^13.1.2",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.5",
+    "parse-database-url": "^0.3.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.5",
+    "sequelize-cli": "^4.0.0",
+    "vision": "^5.3.2",
+    "winston": "^2.4.1",
+    "winston-papertrail": "^1.0.5"
+  },
+  "devDependencies": {
+    "brackets-eslint": "^2.1.4",
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1"
+  }
+}
