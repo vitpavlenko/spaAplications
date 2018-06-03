@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Comment = sequelize.define('comment', {
     comment: {
-        type: DataTypes.TEXT,
-        allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false
     }
   }, {
     timestamps: true,

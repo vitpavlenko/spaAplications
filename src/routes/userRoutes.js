@@ -20,8 +20,8 @@ module.exports = [
                 query: {
                     page: Joi.number().integer().min(1).default(1),
                     page_size: Joi.number().integer().min(1).max(1000).default(50),
-                    email: [Joi.string().email(), Joi.object().pattern(/^/, Joi.string())],
-                    username: [Joi.string(), Joi.object().pattern(/^/, Joi.string())]
+                    email: Joi.string().email(),
+                    username: Joi.string()
                 }
             }
         }

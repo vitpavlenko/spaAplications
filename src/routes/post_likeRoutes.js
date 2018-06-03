@@ -1,14 +1,14 @@
 'use strict';
 const Joi = require('joi');
 
-const { AsyncAdapter: CommentController }  = require('../controllers/comment_controller');
+const { AsyncAdapter: PostLikeController }  = require('../controllers/post_like_controller');
 const reformatValidationOutput = require('../utils/reformatValidationoutput');
 
 module.exports = [
     {
         path: '/api/post_likes',
         method: 'GET',
-        handler: CommentController.list,
+        handler: PostLikeController.list,
         config: {
             auth: 'token',
             description: 'List post like',
@@ -26,7 +26,7 @@ module.exports = [
     }, {
         path: '/api/post_likes',
         method: 'POST',
-        handler: CommentController.create,
+        handler: PostLikeController.create,
         config: {
             auth: 'token',
             description: 'Create post like',
@@ -37,15 +37,14 @@ module.exports = [
                 failAction: reformatValidationOutput,
                 payload: {
                     author_id: Joi.number().required().description('the author id for the post like'),
-                    post_id: Joi.number().min(1).required().description('the id for the post'),
-                    comment: Joi.string()
+                    post_id: Joi.number().min(1).required().description('the id for the post')
                 }
             }
         }
     }, {
         path: '/api/post_likes/{post_like_id}',
         method: 'GET',
-        handler: CommentController.show,
+        handler: PostLikeController.show,
         config: {
             auth: 'token',
             description: 'Get post like',
@@ -82,7 +81,7 @@ module.exports = [
     }, {
         path: '/api/post_likes/{post_like_id}',
         method: 'DELETE',
-        handler: CommentController.destroy,
+        handler: PostLikeController.destroy,
         config: {
             auth: 'token',
             description: 'Delete post like',

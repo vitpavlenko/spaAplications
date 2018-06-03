@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Post = sequelize.define('post', {
     message: {
-        type: DataTypes.TEXT,
-        allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false
     }
   }, {
     timestamps: true,
